@@ -79,7 +79,7 @@ body {
     font-family: var(--ff);
     margin: 0 1rem;
     display: flex;
-    align-items: center;
+    /* align-items: center; */
     justify-content: center;
 }
 
@@ -97,20 +97,98 @@ body {
     --fw: 800;
 }
 .advice-container {
+    margin-top: 150px;
     display: flex;
     flex-direction: column;
+    /* justify-content: center; */
     align-items: center;
+    gap: 1rem;
     background: var(--clr-neutral-dark-grayish-blue);
-    width: 100%;
-    max-width: 480px;
-    /* aspect-ratio: 14/9; */
-    aspect-ratio: 1;
     border-radius: 1rem;
-    padding: 1rem;
     position: relative;
-    box-shadow: 0 0 1rem 0 var(--clr-neutral-dark-blue);
     text-align: center;
+    padding: 2rem;
+
+    width: 100%;
+    max-width: 500px;
+    height: 350px;
+}
+.divider-images {
+  position: absolute;
+  bottom: 60px;
+  width: 90%;
+  left: 50%;
+  transform: translate(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .divider-images img:nth-child(1) {
     display: none;
+}
+#diceBtn {
+  cursor: pointer;
+  position: absolute;
+  border-radius: 50%;
+  aspect-ratio: 1;
+  border: 0;
+  width: 4rem;
+  background: var(--clr-primary-neon-green);
+  display: grid;
+  place-items: center;
+  bottom: -2rem;
+  left: 50%;
+  transform: translate(-50%);
+  transition: 100ms;
+}
+#diceBtn:focus,
+#diceBtn:hover {
+  box-shadow: 0 0 35px 1px var(--clr-primary-neon-green);
+}
+.advice-text {
+  color: var(--clr-primary-light-cyan);
+  font-size: clamp(1rem, 1.5rem ,var(--fs-quote));
+  text-align: center;
+  margin-bottom: 1.5rem;
+  width: fit-content;
+}
+.advice-text::before {
+  content: open-quote;
+}
+
+.advice-text::after {
+  content: close-quote;
+}
+.advice-title {
+  margin-top: 1rem;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  letter-spacing: 4px;
+  color: var(--clr-primary-neon-green);
+  margin-bottom: 0.5rem;
+}
+.advice-ID {
+  margin: 0 5px;
+}
+.advice-ID::before {
+  content: '#';
+}
+
+@media (min-width: 480px) {
+  body {
+    align-items: center;
+  }
+  .advice-title {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+  }
+  .advice-container {
+    margin-top: 0;
+  }
+  .divider-images img:nth-child(1) {
+    display: block;
+  }
+  .divider-images img:nth-child(2) {
+    display: none;
+  }
 }
